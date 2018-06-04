@@ -1,0 +1,15 @@
+<ul>
+    {% nav category in craft.categories %}
+       .group('categoryGroupHandle',')
+       .limit(10)
+       %}
+        <li>
+            <a href="{{ category.url }}">{{ category.title }}</a>
+            {% ifchildren %}
+                <ul>
+                    {% children %}
+                </ul>
+            {% endifchildren %}
+        </li>
+    {% endnav %}
+</ul>
